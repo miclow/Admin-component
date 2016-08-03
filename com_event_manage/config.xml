@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config>
+	<fieldset label="COM_EVENT_MANAGE" name="event_manage" description="Note: For live transaction please select 'SecurePay Test Mode' as No">
+		<field
+			name="testmode"
+			type="radio"
+			class="btn-group btn-group-yesno"
+			default="1"
+			label="SecurePay Test Mode"
+			description='Use Card: 4444111111111111 \nExpiryDate: any date greater than today'
+			>
+			<option value="1">JYES</option>
+			<option value="0">JNO</option>
+		</field>
+		<field
+			name="merchatid"
+			type="text"
+			label="SecurePay Merchant Id"
+			description="Your securepay merchant id"
+			default=""
+			required="true"
+		/>
+		<field
+			name="password"
+			type="text"
+			label="SecurePay Password"
+			description="Your securepay password"
+			default=""
+			required="true"
+		/>
+		<field
+			name="email"
+			type="text"
+			label="Email Id"
+			description="Email Id"
+			default=""
+			required="true"
+		/>
+		<field 
+			id="chargecurrency"
+			name="chargecurrency" 
+			type="list"
+			label="Charge Currency"
+			description="Charge Currency"
+		>
+			<option value="AUD">AUD</option>
+			<option value="USD">USD</option>
+		</field>
+		<field 
+			id="setuprepeat"
+			name="setuprepeat" 
+			type="list"
+			label="Select Repeat Duration"
+			description="Select Repeat Duration"
+		>
+			<option value="weekly">weekly</option>
+			<option value="fortnightly">fortnightly</option>
+			<option value="monthly" selected="selected" >monthly</option>
+			<option value="quarterly">quarterly</option>
+			<option value="halfyearly">half_yearly</option>
+			<option value="yearly">yearly</option>
+		</field>
+		<field
+			name="interval"
+			type="text"
+			label="No of Interval"
+			description="No of Interval"
+			default="6"
+			required="true"
+		/>
+		<field
+			name="insurername"
+			type="text"
+			label="Insurer Name"
+			description="Insurer Name"
+			default="Berkley Insurance Australia"
+			required="true"
+		/>
+		<field
+			name="insureraddress"
+			type="textarea"
+			label="Insurer Address"
+			description="Insurer Address"
+			default=""
+			required="true"
+		/>
+		<field
+			name="abn"
+			type="text"
+			label="ABN"
+			description="ABN"
+			default=""
+			required="true"
+		/>
+	</fieldset>
+	<fieldset name="permissions" description="JCONFIG_PERMISSIONS_DESC" label="JCONFIG_PERMISSIONS_LABEL">
+
+		<field 
+			name="rules" type="rules" component="com_event_manage"
+			class="inputbox" filter="rules" validate="rules"
+			label="JCONFIG_PERMISSIONS_LABEL"
+			section="component" 
+		/>
+	</fieldset>
+</config>
